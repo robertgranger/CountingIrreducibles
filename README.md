@@ -4,4 +4,4 @@ with Prescribed Coefficients", by Robert Granger.
 
 They allow the reader to verify the computations stated in the paper, and also to experiment further. The relevant sections of the paper indicate what each file is for.
 
-Magma files end with ".m" while Maple worksheets end with ".mw".
+Magma files end with ".m" while Maple worksheets end with ".mw". Maple files are tarred in order to preserve the formatting.
