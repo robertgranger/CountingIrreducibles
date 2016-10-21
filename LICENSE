@@ -1,4 +1,12 @@
-                    GNU GENERAL PUBLIC LICENSE
+The released Magma and Maple scripts are distributed according to the 
+license below. 
+
+If they are used in an acedemic setting, then please consider adding a 
+citation to the paper `On the Enumeration of Irreducible Polynomials 
+over GF(q) with Prescribed Coefficients', authored by Robert Granger.
+  
+  
+                      GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
