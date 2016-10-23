@@ -1,11 +1,14 @@
-The released Magma and Maple files are distributed according to the 
-license below. 
+//------------------------------------------------------------------------//
+//The released Magma and Maple files are distributed according to the 
+//license below. 
+//
+//If they are used in an academic setting, then please consider adding a 
+//citation to the paper `On the Enumeration of Irreducible Polynomials 
+//over GF(q) with Prescribed Coefficients', by Robert Granger.
+//
+//Date: 21st October 2016
+//------------------------------------------------------------------------//
 
-If they are used in an academic setting, then please consider adding a 
-citation to the paper `On the Enumeration of Irreducible Polynomials 
-over GF(q) with Prescribed Coefficients', by Robert Granger.
-  
-  
                       GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
