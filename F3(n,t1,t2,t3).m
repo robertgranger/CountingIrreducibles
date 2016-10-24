@@ -359,7 +359,3 @@ for i in [4..14] do
   print i, temp;
   
 end for;
-
-
-
-
