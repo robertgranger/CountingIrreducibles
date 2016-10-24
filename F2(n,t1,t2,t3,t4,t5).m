@@ -1,8 +1,8 @@
 //------------------------------------------------------------------------------------------------------------------------------//
 // Filename: F2(n,t1,t2,t3,t4,t5).m
 //
-// Purpose:  This magma code computes Z(i*f) for i in [0..31] and f = (T_5,T_4,T_3,T_2,T_1) for n = 1,3,5,7 (mod 8), and then applies Transform 2 to 
-// give N(j) for j in [0..31].
+// Purpose:  This magma code computes Z(i*f) for i in [0..31] and f = (T_5,T_4,T_3,T_2,T_1) for n = 1,3,5,7 (mod 8), and then 
+// applies Transform 2 to give N(j) for j in [0..31].
 //
 // Date: 21st October 2016
 // Author: Robert Granger		
@@ -143,7 +143,8 @@ forms := function( B, r0, r1, r2 );
 end function;
 
 
-//This is the main function for 5 coefficients. i should be in [8..31] and n either 1,3,5 or 7 representing those n equal to this mod 8
+//This is the main function for 5 coefficients. i should be in [8..31] and n either 1,3,5 or 7 representing those n equal to 
+//this mod 8.
 //Values for T1(1),T2(1),T3(1),T4(1),T5(1) depend on n mod 8. These are [B[1],B[2],B[3],B[4],B[5]].
 outL5 := function( i, n );
 
@@ -298,7 +299,7 @@ end for;
 
 N7[1] := computequo(1, Z7);
 
-//------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------
 //Since many of the occurring irreducible factors f(X) equal g(-X) for other occurring factors, we cancel the cancelling roots and 
 //combine those that do not.
 
@@ -432,12 +433,13 @@ rewritefactors := function( quo );
 end function;
 
 
-//-------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------
 
 //Output function for latex. Input is N[j].
 
-//Note that we must divide the exponents by 2^4, since there are 4 variables. We must also divide by 16, since this is the denominator of the matrix. 
-//However, since we shall make the coefficient 1/2^5 (for 5 coefficients), we multiply by 2 as well, so in the following we only divide by 8.
+//Note that we must divide the exponents by 2^4, since there are 4 variables. We must also divide by 16, since this is the 
+//denominator of the matrix. However, since we shall make the coefficient 1/2^5 (for 5 coefficients), we multiply by 2 as well, 
+//so in the following we only divide by 8.
 
 
 //This is a subroutine for the ensuing function
