@@ -1,8 +1,8 @@
 //------------------------------------------------------------------------------------------------------------------------------//
 // Filename: F3(n,t1,t2,t3).m
 //
-// Purpose:  This magma code computes Z_1(i*f) for i in [0..26] and f = (T_3,T_2,T_1) for n = 1,2,4,5,7,8 (mod 9), and then applies Transform 2 to give 
-// N(j) for j in [0..26].
+// Purpose:  This magma code computes Z_1(i*f) for i in [0..26] and f = (T_3,T_2,T_1) for n = 1,2,4,5,7,8 (mod 9), and then 
+// applies Transform 2 to give N(j) for j in [0..26].
 //
 // Date: 21st October 2016
 // Author: Robert Granger		
@@ -48,7 +48,7 @@ base3 := function( i );
   return out;
 end function;
 
-//----------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 
 //Need to define the trace forms, dependent on B := [B[1],B[2],B[3]] vector, so define as a function. 
 //Tr[i] is T_(4-i)(x^3 - x + r0), i.e., the base elements for the linear combinations.
@@ -61,7 +61,8 @@ forms := function( B, r0, n );
 end function;
 
 
-//This is the main function for 3 coefficients. i should be in [3..26] and n either 1,2,4,5,7,8 representing those n equal to this mod 9
+//This is the main function for 3 coefficients. i should be in [3..26] and n either 1,2,4,5,7,8 representing those n equal to 
+//this mod 9.
 //Values for T1(1),T2(1),T3(1) depend on n mod 9. These are B := [B[1],B[2],B[3]].
 outL3 := function( i, n );
 
@@ -104,7 +105,7 @@ for i in [3..26] do
   Z8[i-2] := outL3(i,8);
 end for;
 
-//-------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------
 
 //This is 9 * S_3^(-1) with the first three columns deleted.
 M := Matrix(27,24,[
@@ -137,7 +138,7 @@ M := Matrix(27,24,[
 [0 , 1 , -1 , 1 , -1 , 0 , 0 , 1 , -1 , 1 , -1 , 0 , -1 , 0 , 1 , 1 , -1 , 0 , -1 , 0 , 1 , 0 , 1 , -1]
 ]);
 
-//--------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
 
 //This computes the L-polynomial expressions for Nn(j) and Zn with n = 1,2,4,5,7,8 
 computequo := function( j, Z );
@@ -157,7 +158,8 @@ computequo := function( j, Z );
 end function;
 
 
-//Computes the L-polynomial expressions for N1(j) for j in [0..26], for n = 1 (mod 9). Remember that Magma arrays start from 1, not 0.
+//Computes the L-polynomial expressions for N1(j) for j in [0..26], for n = 1 (mod 9). 
+//Remember that Magma arrays start from 1, not 0.
 N1 := [];
 
 //Compute N1[1] last in order to avoid a sequence mutation
@@ -183,7 +185,7 @@ end for;
 
 N2[1] := computequo(1, Z2);
 
-//Computes the L-polynomial expressions for N4(j) for j in [0..26], for n = 4 (mod 9). Remember that Magma arrays start from 1, not 0.
+//Computes the L-polynomial expressions for N4(j) for j in [0..26], for n = 4 (mod 9). 
 N4 := [];
 
 //Compute N4[1] last in order to avoid a sequence mutation
@@ -196,7 +198,7 @@ end for;
 
 N4[1] := computequo(1, Z4);
 
-//Computes the L-polynomial expressions for N5(j) for j in [0..26], for n = 5 (mod 9). Remember that Magma arrays start from 1, not 0.
+//Computes the L-polynomial expressions for N5(j) for j in [0..26], for n = 5 (mod 9). 
 N5 := [];
 
 //Compute N5[1] last in order to avoid a sequence mutation
@@ -209,7 +211,7 @@ end for;
 
 N5[1] := computequo(1, Z5);
 
-//Computes the L-polynomial expressions for N7(j) for j in [0..26], for n = 7 (mod 9). Remember that Magma arrays start from 1, not 0.
+//Computes the L-polynomial expressions for N7(j) for j in [0..26], for n = 7 (mod 9). 
 N7 := [];
 
 //Compute N7[1] last in order to avoid a sequence mutation
@@ -222,7 +224,7 @@ end for;
 
 N7[1] := computequo(1, Z7);
 
-//Computes the L-polynomial expressions for N8(j) for j in [0..26], for n = 8 (mod 9). Remember that Magma arrays start from 1, not 0.
+//Computes the L-polynomial expressions for N8(j) for j in [0..26], for n = 8 (mod 9). 
 N8 := [];
 
 //Compute N8[1] last in order to avoid a sequence mutation
@@ -282,10 +284,11 @@ rewritefactors := function( quo );
 end function;
 
 
-//-------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------
 
 //Output function for ease of viewing. Input is Nn[j].
-//Note that we must divide the exponents by 3^2, since there are 2 variables. We must also divide by 9, since this is the denominator of the matrix.
+//Note that we must divide the exponents by 3^2, since there are 2 variables. We must also divide by 9, since this is the 
+//denominator of the matrix.
 
 //This is the output function
 out := function( j );
